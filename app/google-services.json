@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "244057228692",
+    "firebase_url": "https://mango-aecbf.firebaseio.com",
+    "project_id": "mango-aecbf",
+    "storage_bucket": "mango-aecbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244057228692:android:fdeca59c226bf09f",
+        "android_client_info": {
+          "package_name": "foogle.infomango"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244057228692-o455hh1ocaj95m0aj5pepcitke5q1blo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP0tKD4yH4FncYWj0_59nyTb-wGbXa4Ac"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
