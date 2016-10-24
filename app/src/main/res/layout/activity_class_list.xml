@@ -228,6 +228,21 @@
             android:textColor="#ffffff"
             android:background="#3F51B5"
             android:elevation="2dp"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Post"
+            android:id="@+id/testPost"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/class12"
+            android:layout_alignEnd="@+id/smallText"
+            android:layout_gravity="center_horizontal"
+            android:ems="15"
+            android:textColor="#ffffff"
+            android:background="#3F51B5"
+            android:elevation="2dp"/>
+
 
     </LinearLayout>
     </ScrollView>

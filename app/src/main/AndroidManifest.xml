@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClassList"></activity>
+        <activity android:name=".ClassList" />
+        <activity android:name=".Test" />
+        <activity android:name=".PostList"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.0.+'
     // Azure Active Directory Library
     compile 'com.microsoft.aad:adal:1.+'
     // Retrofit + custom HTTP
@@ -31,4 +31,5 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:+'
     compile 'com.squareup.retrofit2:retrofit:+'
     compile 'com.squareup.retrofit2:converter-gson:+'
+    compile 'com.google.firebase:firebase-database:+'
 }
