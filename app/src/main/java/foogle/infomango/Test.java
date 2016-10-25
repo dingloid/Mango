@@ -1,6 +1,7 @@
 package foogle.infomango;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -91,6 +92,9 @@ public class Test extends ActionBarActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                FragmentManager fm = getFragmentManager();
+                PostDialog pd = new PostDialog();
+                pd.show(fm, "Title");
                 // Create a new child with a auto-generated ID.
                 DatabaseReference childRef = myRef.push();
 
