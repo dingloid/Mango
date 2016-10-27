@@ -22,10 +22,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class Test extends ActionBarActivity {
+public class Test extends ActionBarActivity{
 
 
     Bundle extras;
+    DatabaseReference myRef;
 
 
     @Override
@@ -53,7 +54,7 @@ public class Test extends ActionBarActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         // Get a reference to the todoItems child items it the database
-        final DatabaseReference myRef = database.getReference(className);
+        myRef = database.getReference(className);
 
         // Assign a listener to detect changes to the child items
         // of the database reference.
@@ -86,20 +87,24 @@ public class Test extends ActionBarActivity {
         });
 
         // Add items via the Button and EditText at the bottom of the window.
-        final EditText text = (EditText) findViewById(R.id.todoText);
+//        final EditText text = (EditText) findViewById(R.id.todoText);
         final Button button = (Button) findViewById(R.id.addButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+               final DatabaseReference childRef = myRef.push();
                 FragmentManager fm = getFragmentManager();
                 PostDialog pd = new PostDialog();
                 pd.show(fm, "Title");
-                // Create a new child with a auto-generated ID.
-                DatabaseReference childRef = myRef.push();
+                pd.setDialogResult(new onCompleteListener() {
+                    @Override
+                    public void onComplete(String t, String m) {
+                        childRef.setValue(t);
+                        childRef.child("Message").setValue(m);
 
-                // Set the child's data to the value passed in from the text box.
-                childRef.setValue(text.getText().toString());
+                    }
+                });
+
             }
         });
 
@@ -128,4 +133,10 @@ public class Test extends ActionBarActivity {
             }
         });
     }
+
+//    @Override
+//    public void onComplete(String t, String m) {
+//        DatabaseReference childRef = myRef.push();
+//        childRef.setValue(t);
+//    }
 }
