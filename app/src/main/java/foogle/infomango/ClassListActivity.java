@@ -11,15 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class ClassList extends AppCompatActivity implements View.OnClickListener {
+public class ClassListActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String mGivenName;
     private Button disconnect;
 
-
-    // arguments for this activity
-    public static final String ARG_GIVEN_NAME = "givenName";
-    public static final String ARG_DISPLAY_ID = "displayableId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,18 +54,13 @@ public class ClassList extends AppCompatActivity implements View.OnClickListener
         setSupportActionBar(tb);
         getSupportActionBar().setTitle("");
 
-        TextView mTitleTextView = (TextView) findViewById(R.id.titleTextView);
-
-        mGivenName = getIntent().getStringExtra(ARG_GIVEN_NAME);
-        mTitleTextView.append(mGivenName + "!");
 
         disconnect = (Button) findViewById(R.id.button);
 
         disconnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AuthenticationManager.getInstance().disconnect();
-                Intent connectIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent connectIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(connectIntent);
                 finish();
             }
@@ -85,12 +76,11 @@ public class ClassList extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         int id = v.getId();
 
-        Intent i = new Intent(getApplicationContext(), Test.class);
+        Intent i = new Intent(getApplicationContext(), ClassPostListActivity.class);
 
         switch(id){
             case R.id.class1:
                 i.putExtra("class", getString(R.string.INSY2303));
-
                 startActivity(i);
                 break;
             case R.id.class2:

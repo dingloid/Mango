@@ -3,25 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="foogle.infomango.ClassList"
+    tools:context="foogle.infomango.ClassListActivity"
     android:background="#303F9F">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
 
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:text="@string/title_text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="visible"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:elevation="2dp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -42,7 +29,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Choose a class"
         android:id="@+id/smallText"
-        android:layout_below="@+id/titleTextView"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"/>
 
@@ -222,20 +208,6 @@
             android:id="@+id/class12"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/class11"
-            android:layout_alignEnd="@+id/smallText"
-            android:layout_gravity="center_horizontal"
-            android:ems="15"
-            android:textColor="#ffffff"
-            android:background="#3F51B5"
-            android:elevation="2dp"/>
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Test Post"
-            android:id="@+id/testPost"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/class12"
             android:layout_alignEnd="@+id/smallText"
             android:layout_gravity="center_horizontal"
             android:ems="15"

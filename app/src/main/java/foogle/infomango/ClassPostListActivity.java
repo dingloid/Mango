@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class Test extends ActionBarActivity{
+public class ClassPostListActivity extends ActionBarActivity{
 
 
     Bundle extras;
@@ -133,10 +133,4 @@ public class Test extends ActionBarActivity{
             }
         });
     }
-
-//    @Override
-//    public void onComplete(String t, String m) {
-//        DatabaseReference childRef = myRef.push();
-//        childRef.setValue(t);
-//    }
 }
