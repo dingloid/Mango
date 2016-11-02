@@ -10,17 +10,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class ClassListActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String mGivenName;
     private Button disconnect;
+
+    FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_list);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Button class1 = (Button) findViewById(R.id.class1);
         Button class2 = (Button) findViewById(R.id.class2);
@@ -60,6 +65,7 @@ public class ClassListActivity extends AppCompatActivity implements View.OnClick
         disconnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mAuth.signOut();
                 Intent connectIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(connectIntent);
                 finish();

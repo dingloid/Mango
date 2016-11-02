@@ -1,5 +1,6 @@
 package foogle.infomango;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -25,6 +26,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private EditText mPasswordField;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
+    private Button signout;
 
     private static final String TAG = "EmailPassword";
 
@@ -49,9 +51,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         createAccount = (Button) findViewById(R.id.createAccount);
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
+        signout = (Button) findViewById(R.id.sign_out_button);
 
         createAccount.setOnClickListener(this);
         login.setOnClickListener(this);
+        signout.setOnClickListener(this);
 
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
@@ -218,6 +222,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.connectButton) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
+            Intent intent = new Intent(this, ClassListActivity.class);
+            startActivity(intent);
         } else if (i == R.id.sign_out_button) {
             signOut();
         }
