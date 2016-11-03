@@ -100,7 +100,7 @@ public class ClassPostListActivity extends ActionBarActivity{
                     @Override
                     public void onComplete(String t, String m) {
                         childRef.setValue(t);
-                        childRef.child("Message").setValue(m);
+//                        childRef.child("Message").setValue(m);
 
                     }
                 });

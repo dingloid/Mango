@@ -38,6 +38,7 @@ public class PostDialog extends DialogFragment {
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(view);
+        builder.setTitle("Write Post");
                 // Add action buttons
 
                 builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
