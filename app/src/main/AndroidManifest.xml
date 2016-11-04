@@ -20,8 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClassListActivity" />
-        <activity android:name=".ClassPostListActivity" />
-        <activity android:name=".PostListActivity"></activity>
     </application>
 
 </manifest>
