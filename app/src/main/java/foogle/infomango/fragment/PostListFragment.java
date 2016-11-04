@@ -18,6 +18,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 
 import foogle.infomango.objects.Post;
+import foogle.infomango.viewholder.PostViewHolder;
 
 public abstract class PostListFragment extends Fragment {
 

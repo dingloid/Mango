@@ -3,9 +3,9 @@ package foogle.infomango.fragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 
-public class PostFragment extends PostListFragment{
+public class MyPostsFragment extends PostListFragment{
 
-    public PostFragment() {}
+    public MyPostsFragment() {}
 
     @Override
     public Query getQuery(DatabaseReference databaseReference) {

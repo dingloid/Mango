@@ -1,14 +1,12 @@
 package foogle.infomango;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -66,7 +64,7 @@ public class ClassListActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-                Intent connectIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent connectIntent = new Intent(getApplicationContext(), SignInActivity.class);
                 startActivity(connectIntent);
                 finish();
             }
