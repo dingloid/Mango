@@ -1,8 +1,12 @@
 package foogle.infomango.viewholder;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import foogle.infomango.R;
+import foogle.infomango.objects.Post;
 
 public class PostViewHolder extends RecyclerView.ViewHolder {
 

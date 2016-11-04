@@ -80,7 +80,7 @@ public class ClassListActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         int id = v.getId();
 
-        Intent i = new Intent(getApplicationContext(), ClassPostListActivity.class);
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 
         switch(id){
             case R.id.class1:
