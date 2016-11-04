@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -52,29 +53,36 @@ public class ClassListActivity extends AppCompatActivity implements View.OnClick
         class11.setOnClickListener(this);
         class12.setOnClickListener(this);
 
-
-        Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(tb);
-        getSupportActionBar().setTitle("");
-
-
-        disconnect = (Button) findViewById(R.id.button);
-
-        disconnect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.signOut();
-                Intent connectIntent = new Intent(getApplicationContext(), SignInActivity.class);
-                startActivity(connectIntent);
-                finish();
-            }
-        });
+//        disconnect = (Button) findViewById(R.id.button);
+//
+//        disconnect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mAuth.signOut();
+//                Intent connectIntent = new Intent(getApplicationContext(), SignInActivity.class);
+//                startActivity(connectIntent);
+//                finish();
+//            }
+//        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i = item.getItemId();
+        if (i == R.id.action_logout) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, SignInActivity.class));
+            finish();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     public void onClick(View v) {

@@ -3,12 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="foogle.infomango.ClassListActivity"
+    tools:context=".ClassListActivity"
     android:background="#303F9F">
-
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
-
 
     <Button
         style="?android:attr/buttonStyleSmall"
