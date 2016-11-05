@@ -12,6 +12,7 @@ public class RecentPostsFragment extends PostListFragment {
         // [START recent_posts_query]
         // Last 100 posts, these are automatically the 100 most recent
         // due to sorting by push() keys
+        // Some way filter by classes
         Query recentPostsQuery = databaseReference.child("posts")
                 .limitToFirst(100);
         // [END recent_posts_query]

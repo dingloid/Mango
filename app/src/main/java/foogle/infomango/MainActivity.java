@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import foogle.infomango.fragment.MyPostsFragment;
 import foogle.infomango.fragment.RecentPostsFragment;
@@ -22,11 +24,21 @@ public class MainActivity extends BaseActivity {
 
     private FragmentPagerAdapter mPagerAdapter;
     private ViewPager mViewPager;
+    DatabaseReference mRef;
+    Bundle extra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        extra = getIntent().getExtras();
+        final String className = extra.getString("class");
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        mRef = database.getReference(className);
+        System.out.println(className);
+
 
         // Create the adapter that will return a fragment for each section
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -63,7 +75,9 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewPostActivity.class));
+                Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
+                intent.putExtra("class", className);
+                startActivity(intent);
             }
         });
     }
