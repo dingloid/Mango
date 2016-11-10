@@ -28,6 +28,7 @@ import foogle.infomango.viewholder.PostViewHolder;
 public abstract class PostListFragment extends Fragment {
 
     private static final String TAG = "PostListFragment";
+    protected String mClassName;
 
     // [START define_database_reference]
     private DatabaseReference mDatabase;
@@ -82,6 +83,7 @@ public abstract class PostListFragment extends Fragment {
                         // Launch PostDetailActivity
                         Intent intent = new Intent(getActivity(), PostDetailActivity.class);
                         intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
+                        intent.putExtra("className", mClassName);
                         startActivity(intent);
                     }
                 });
@@ -159,5 +161,9 @@ public abstract class PostListFragment extends Fragment {
     }
 
     public abstract Query getQuery(DatabaseReference databaseReference);
+
+    public void setClass(String c){
+        mClassName = c;
+    }
 }
 

@@ -38,6 +38,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
     private ValueEventListener mPostListener;
     private String mPostKey;
     private CommentAdapter mAdapter;
+    private String className;
 
     private TextView mAuthorView;
     private TextView mTitleView;
@@ -57,9 +58,11 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
 
+        className = getIntent().getStringExtra("className");
+
         // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("posts").child(mPostKey);
+                .child(className+"/posts").child(mPostKey);
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
                 .child("post-comments").child(mPostKey);
 

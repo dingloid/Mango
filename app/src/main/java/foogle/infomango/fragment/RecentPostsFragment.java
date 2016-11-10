@@ -5,7 +5,7 @@ import com.google.firebase.database.Query;
 
 public class RecentPostsFragment extends PostListFragment {
 
-    private String mClassName;
+
 
     public RecentPostsFragment() {}
 
@@ -22,7 +22,5 @@ public class RecentPostsFragment extends PostListFragment {
         return recentPostsQuery;
     }
 
-    public void setClass(String c){
-       mClassName = c;
-    }
+
 }
