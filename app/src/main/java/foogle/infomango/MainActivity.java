@@ -54,10 +54,12 @@ public class MainActivity extends BaseActivity {
             };
             @Override
             public Fragment getItem(int position) {
+                ((RecentPostsFragment) mFragments[0]).setClass(className);
                 return mFragments[position];
             }
             @Override
             public int getCount() {
+
                 return mFragments.length;
             }
             @Override
