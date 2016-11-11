@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import foogle.infomango.fragment.MyPostsFragment;
+import foogle.infomango.fragment.PostListFragment;
 import foogle.infomango.fragment.RecentPostsFragment;
 
 public class MainActivity extends BaseActivity {
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity {
             };
             @Override
             public Fragment getItem(int position) {
-                ((RecentPostsFragment) mFragments[0]).setClass(className);
+                ((PostListFragment) mFragments[position]).setClass(className);
                 return mFragments[position];
             }
             @Override

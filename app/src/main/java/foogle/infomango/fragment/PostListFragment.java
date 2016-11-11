@@ -100,8 +100,8 @@ public abstract class PostListFragment extends Fragment {
                     @Override
                     public void onClick(View starView) {
                         // Need to write to both places the post is stored
-                        DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
-                        DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
+                        DatabaseReference globalPostRef = mDatabase.child(mClassName + "/posts").child(postRef.getKey());
+                        DatabaseReference userPostRef = mDatabase.child(mClassName + "/user-posts").child(model.uid).child(postRef.getKey());
 
                         // Run two transactions
                         onStarClicked(globalPostRef);
@@ -165,5 +165,6 @@ public abstract class PostListFragment extends Fragment {
     public void setClass(String c){
         mClassName = c;
     }
+
 }
 
