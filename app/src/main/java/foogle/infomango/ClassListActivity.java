@@ -8,15 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class ClassListActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button disconnect;
+    private TextView usernameText;
 
     FirebaseAuth mAuth;
+    Bundle extra;
 
 
     @Override
@@ -24,7 +26,15 @@ public class ClassListActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_list);
 
+        usernameText = (TextView) findViewById(R.id.username);
+
         mAuth = FirebaseAuth.getInstance();
+
+        extra = getIntent().getExtras();
+        String username = extra.getString("username");
+        String welcome = getString(R.string.welcome) +" " + username + ",";
+
+        usernameText.setText(welcome);
 
         Button class1 = (Button) findViewById(R.id.class1);
         Button class2 = (Button) findViewById(R.id.class2);
